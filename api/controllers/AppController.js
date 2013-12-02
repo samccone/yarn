@@ -1,5 +1,5 @@
 /**
- * UserController
+ * AppController
  *
  * @module      :: Controller
  * @description	:: A set of functions called `actions`.
@@ -17,17 +17,16 @@
 
 module.exports = {
 
-  login: function(req, res) {
-    if (req.body.token === process.env['TOKEN']) {
-      req.session.authed = true;
+  index: function(req, res) {
+    if (req.session.authed) {
+      res.render('app');
+    } else {
+      res.render('login');
     }
-
-    res.redirect('/');
   },
-
   /**
    * Overrides for the settings in `config/controllers.js`
-   * (specific to UserController)
+   * (specific to AppController)
    */
   _config: {}
 

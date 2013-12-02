@@ -4,4 +4,4 @@
 ### dev
 ```npm install -g sails```
 ```npm install```
-```sails lift```
+```TOKEN="foo" sails lift```
